@@ -1,0 +1,34 @@
+<div class="card-container">
+  <div class="card">
+    <img [src]="character.image" [alt]="character.name">
+    <div class="card-body">
+        <h2>{{ character.name }}</h2>
+        <div class="attribute">
+            <strong>Gender:</strong> {{ character.gender }}
+        </div>
+        <div class="attribute">
+            <strong>Species:</strong> {{ character.species }}
+        </div>
+        <div class="attribute">
+            <strong>Status:</strong> {{ character.status }}
+        </div>
+        <div class="attribute">
+            <strong>Location:</strong> {{ character.location.name }}
+        </div>
+        <div class="attribute">
+            <strong>Created:</strong> <span>{{ character.created }}</span>
+        </div>
+        <div class="attribute">
+            <strong>Episodes:</strong>
+            <ul>
+                <li *ngFor="let episode of character.episode.slice(0, 3)">
+                    <a [href]="episode">{{ episode }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <button [routerLink]="''">Volver</button>
+  </div>
+
+</div>
